@@ -8,12 +8,10 @@ Why automation is hard.
 
 ## How to automate something specific
 
-## How to autmate something general
+## How to automate something general
 
 ## Summary
 
 We can now automate the automation of everything.
 
-
-{% include bio.html github="" twitter="" blurb="" %}
-
+/label ~Ideas
