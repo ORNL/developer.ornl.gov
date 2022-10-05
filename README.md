@@ -12,7 +12,7 @@ that are too short for a traditional journal.
 
 # Process for contributing an article
 
-Before writing up a complete article, create a [new issue](https://code.ornl.gov/software-sustainability/developer.ornl.gov/-/issues/new) briefly describing the title, tags, and abstract of the article you'd like to write.  The editorial should follow up on your issue with comments.
+Before writing up a complete article, create a [new issue](https://code.ornl.gov/software-sustainability/developer.ornl.gov/-/issues/new) briefly describing the title, tags, and abstract of the article you'd like to write.  The editorial board should follow up on your issue with comments.
 
 After deciding to go forward, create the proposed article in a file named like `_posts/YYYY-MM-DD-article-name.md`.  Commit the article to a new branch and send it to this repository as a merge request (aka pull request).
 
