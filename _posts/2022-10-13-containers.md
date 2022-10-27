@@ -74,7 +74,7 @@ From: amd64/python:3.9
     Author David M. Rogers
 ```
 
-Because `root = uid 0` is hard-coded into a lot of system utilities, creating a container often requires executing commands as root within the container.  Technically, this creates files inside your container space owned by the root user - which many systems do not permit.  In order to get around this restriction, I use the [syslabs builder](https://cloud.sylabs.io/builder).  Navigate to that website, create an account, and then run (at your command-line) `singularity remote login`.  This will direct you to visit a URL and generate a token.  Copy the token into the waiting terminal and hit enter.
+Because `root = uid 0` is hard-coded into a lot of system utilities, creating a container often requires executing commands as root within the container.  Technically, this creates files inside your container space owned by the root user - which many systems do not permit.  In order to get around this restriction, I use the [sylabs builder](https://cloud.sylabs.io/builder).  Navigate to that website, create an account, and then run (at your command-line) `singularity remote login`.  This will direct you to visit a URL and generate a token.  Copy the token into the waiting terminal and hit enter.
 
 Next, build with,
 
@@ -262,7 +262,7 @@ For GPU-intensive codes, Apptainer provides `--nv` and `--rocm` flags
 that load the libraries and executables present in `/etc/singularity/*liblist.conf` into your container
 from the host.  They are not magic, however.  As we can see from the examples above,
 they rely on building your containerized applications on top of ABI-compatible
-versions of libraries on the host.  For Summit and Frontier, the base images above
+versions of libraries on the host.  For Summit (podman for ppc64le arch) and Crusher/Frontier (docker or sylabs builder for x86_64 compatible zen3), the base images above
 accomplish this.
 
 
