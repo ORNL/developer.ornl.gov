@@ -8,7 +8,7 @@ With the large array of hardware available today, portable code isn't an easy th
 
 There are many ways to approach this, the most common being directives-based specifications (e.g., [OpenACC](https://www.openacc.org/) and [OpenMP](https://www.openmp.org/)); Domain Specific Languages, DSLs, valid for certain discretization and algorithmic choices; and portable C++ libraries. The focus of this blog post is on the latter.
 
-There are several C++ portability libraries available, the two most popular likely being [Kokkos](https://github.com/kokkos/kokkos) and [RAJA](https://github.com/LLNL/RAJA). These each some with large features sets and large development teams and are excellent choices for portability. There are several aspects that can be difficult to deal when when porting a Fortran code to portable C++, however. That's where [Yet Another Kernel Launcher (YAKL)](https://github.com/mrnorman/YAKL) comes in.
+There are several C++ portability libraries available, the most popular likely being [Kokkos](https://github.com/kokkos/kokkos), [RAJA](https://github.com/LLNL/RAJA), and [SYCL](https://www.khronos.org/sycl/). These each some with large features sets and large development teams and are excellent choices for portability. There are several aspects that can be difficult to deal when when porting a Fortran code to portable C++, however. That's where [Yet Another Kernel Launcher (YAKL)](https://github.com/mrnorman/YAKL) comes in.
 
 First, let's dive briefly into what portable C++ actuall **is**.
 
@@ -137,10 +137,7 @@ Here, we see use of intrinsics like `size` and `maxval`. The code inside the loo
 
 ## More information
 
-For more information on YAKL, please see the [documentation](https://github.com/mrnorman/YAKL/wiki) and the [publication](https://link.springer.com/article/10.1007/s10766-022-00739-0). 
-
-For more information on other C++ libraries, please see the [Kokkos](https://github.com/kokkos/kokkos), [RAJA](https://github.com/LLNL/RAJA), and [SYCL](https://www.khronos.org/sycl/) libraries and associated documentation.
-
+For full code examples, tutorials, and usage instructions, see the full [YAKL documentation](https://github.com/mrnorman/YAKL/wiki) and [this publication](https://link.springer.com/article/10.1007/s10766-022-00739-0).
 
 ## Author Bio
 
