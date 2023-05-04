@@ -142,3 +142,7 @@ For more information on YAKL, please see the [documentation](https://github.com/
 For more information on other C++ libraries, please see the [Kokkos](https://github.com/kokkos/kokkos), [RAJA](https://github.com/LLNL/RAJA), and [SYCL](https://www.khronos.org/sycl/) libraries and associated documentation.
 
 
+## Author Bio
+
+Matt Norman leads the Advanced Computing for Life Sciences and Engineering Group in the Scientific Engagement section of the National Center for Computational Sciences at Oak Ridge National Laboratory. His research include creating new discretization of the Navier-Stokes equations for atmospheric weather and climate models, creating portable C++ libraries, creating tools to integration Machine Learning tightly into PDEs-based models, understanding how to enforce physical constraints on Machine Learning models, and performance optimization for GPU-accelerated devices.
+
