@@ -12,6 +12,8 @@ There are several C++ portability libraries available, the most popular likely b
 
 First, let's dive briefly into what portable C++ actuall **is**.
 
+<img src="/images/yakl_yak.png" width=200 />
+
 ## What is Portable C++?
 
 First, portable C++ is just a C++ library, not a new specification or language extention / augmentation. It works fully within existing ISO C++ standards and compiler implementations. There are backends that use vendor-specific languages and libraries. However, user-facing code is purely C++, and when using non-accelerator backends, the library is entirely ISO C++.
