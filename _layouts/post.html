@@ -1,0 +1,26 @@
+---
+layout: layout
+excerpt_separator: <!--more-->
+---
+
+<section class="content">
+  <h1>
+    <a href="{{ page.url }}">{{ page.title }}</a>
+  </h1>
+  <div>
+    <span>Tags: </span>
+    {% for tag in page.tags %}
+      {% assign tag_slug = tag | slugify: "raw" %}
+      <a class="tag-link" href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }} rel="category tag">
+        #{{ tag }}
+      </a>
+    {% endfor %}
+  </div>
+
+  <section class="byline">
+    {{ page.date | date: "%B %e, %Y" }}
+  </section>
+
+  {{ content }}
+
+</section>

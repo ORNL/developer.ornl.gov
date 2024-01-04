@@ -1,0 +1,25 @@
+
+
+
+  <div class="top-bar-right">
+    <ul class="dropdown menu" data-dropdown-menu>
+    <!--<ul class="vertical medium-horizonal menu">-->
+
+    <!--<li><a href="/about.html">About</a></li>
+      <li><a href="/projects.html">Projects</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>-->
+
+      {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
+      {% for p in navigation_pages %}
+      {% if p.navigation_weight %}
+      <li>
+        <a href="{{ p.url }}" {% if p.url == page.url %}class="active"{% endif %}>
+          {{ p.title }}
+        </a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+

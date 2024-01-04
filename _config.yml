@@ -1,0 +1,34 @@
+name: ORNL Developer Blog
+title: ORNL Developer Blog
+author: Oak Ridge National Laboratory
+description: Recipes and tutorials for computational and data scientists.
+
+markdown: kramdown
+
+plugins:
+  - jekyll-sitemap
+
+collections:
+  posts:
+    output: true
+    permalink: blog/:year/:month/:day/:title/
+  tags:
+    output: true
+    permalink: tags/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      breadcrumb: Blog
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

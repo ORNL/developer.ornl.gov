@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+{% include head.html %}
+<body>
+  <div class="container">
+
+    <div class="row expanded header-section">
+      <div class="medium-12 columns">
+          <div class="row align-justify align-middle">
+              {% include header.html %}
+    </div>
+    </div>
+    </div>
+
+      <div class="row">
+          <div class="medium-12 columns">
+              {% include breadcrumbs.html %}
+          </div>
+          </div>
+      </div>
+
+
+    <div class="row content-section">
+      <div class="small-12 medium-9 columns">
+  {{ content }}
+        </div>
+      <div class="medium-3 columns">
+        {% include sidebar.html %}
+
+      </div>
+
+      </div>
+    <div class="row expanded footer-section">
+      <div class="medium-12 columns">
+        <div class="row align-justify align-middle">
+    {% include footer.html %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
