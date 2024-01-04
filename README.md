@@ -1,8 +1,8 @@
 # ORNL Developer Blog
 
-This blog is a place for ORNL developers to publish short
+This blog is a place for developers to publish short
 technical articles related to software development and use
-activities at the lab.
+activities at ORNL.
 
 It *is not* a replacement for scholarly articles, which should
 be considered when you are publishing performance data,
@@ -12,9 +12,16 @@ that are too short for a traditional journal.
 
 # Process for contributing an article
 
-Before writing up a complete article, create a [new issue](https://code.ornl.gov/software-sustainability/developer.ornl.gov/-/issues/new) briefly describing the title, tags, and abstract of the article you'd like to write.  The editorial board should follow up on your issue with comments.
+Before writing up a complete article, create a
+[new issue](https://github.com/ORNL/developer.ornl.gov/issues/new/choose)
+briefly describing the title, tags, and abstract of the article
+you'd like to write.  The editorial board should follow up on your
+issue with comments.
 
-After deciding to go forward, create the proposed article in a file named like `_posts/YYYY-MM-DD-article-name.md`.  Commit the article to a new branch and send it to this repository as a merge request (aka pull request).
+After deciding to go forward, create the proposed article in a file
+named like `_posts/YYYY-MM-DD-article-name.md`.
+Commit the article to a new branch and send it to this repository
+as a pull request.
 
 
 # Writing in markdown
@@ -22,14 +29,16 @@ After deciding to go forward, create the proposed article in a file named like `
 There are four good ways to preview your articles
 in markdown before committing them to the repository.
 
-Content on this blog is displayed using [kramdown](https://kramdown.gettalong.org/) and [Liquid with jekyll](https://jekyllrb.com/docs/liquid/) to substitute inside braces, `{{ }} / {% %}`.
+Content on this blog is displayed using [kramdown](https://kramdown.gettalong.org/)
+and [Liquid with jekyll](https://jekyllrb.com/docs/liquid/) to substitute
+inside braces, `{{ }} / {% %}`.
 
 There are several methods to get a `built preview` of your
 document as you're writing it.
 
 ### Method 1: direct issue
 
-1. Open a [new issue](https://code.ornl.gov/software-sustainability/developer.ornl.gov/-/issues/new)
+1. Open a [new issue](ttps://github.com/ORNL/developer.ornl.gov/issues/new/choose)
 
 2. Select "article" from the Description drop-down to get a template.
 
@@ -73,7 +82,7 @@ This method will create a full site preview, including substitution for liquid t
 
 3. Clone and install this project:
 
-    git clone git@code.ornl.gov:software-sustainability/developer.ornl.gov.git
+    git clone https://github.com/ORNL/developer.ornl.gov.git
     git checkout -b new-article
     bundle
     
