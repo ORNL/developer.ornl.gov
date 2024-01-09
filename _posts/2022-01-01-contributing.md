@@ -4,6 +4,8 @@ author: David M. Rogers
 tags: ["contributing"]
 ---
 
+![laptop](/images/laptop.png)
+
 We've launched this ORNL developer blog with the aim of
 pointing to tutorials, walkthroughts, training,
 and other technical documentation that gets cutting-edge
