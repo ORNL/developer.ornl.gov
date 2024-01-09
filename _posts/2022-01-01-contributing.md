@@ -7,7 +7,7 @@ tags: ["contributing"]
 ![laptop](/images/laptop.png)
 
 We've launched this ORNL developer blog with the aim of
-pointing to tutorials, walkthroughts, training,
+pointing to tutorials, walkthroughs, training,
 and other technical documentation that gets cutting-edge
 software to work for you.
 
