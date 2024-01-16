@@ -210,7 +210,7 @@ can be captured for each run.
 ## Setting up Metadata
 
 From the [database documentation](https://wiki.fysik.dtu.dk/ase/ase/db/db.html),
-it's a good idea to setup the database's metada using,
+it's a good idea to setup the database's metadata using,
 
     ase db calc.db --set-metadata metadata.json
 
@@ -251,17 +251,17 @@ syntax errors that are hard to spot at a glance.
 Serving the webpage notes that an additional step is
 needed to actually display the molecules using jsmol:
 
-    Download Jmol-*-binary.tar.gz from
-    https://sourceforge.net/projects/jmol/files/Jmol/,
-    extract jsmol.zip, unzip it and create a soft-link:
+Download `Jmol-*-binary.zip` from
+https://sourceforge.net/projects/jmol/files/Jmol/,
+and extract the jsmol subdirectory into ase's static folder:
 
-    $ tar -xf Jmol-*-binary.tar.gz
-    $ unzip jmol-*/jsmol.zip
-    $ mv jsmol $HOME/venvs/asedata/lib/python3.9/site-packages/ase/db/static/
+    $ cd jmol-*
+    $ unzip jsmol.zip
+    $ mv jsmol $VIRTUAL_ENV/lib/python3.*/site-packages/ase/db/static/
 
 Then serve using:
 
-    ase db mydata.db -w
+    $ ase db mydata.db -w
 
 ## Data Validation
 
