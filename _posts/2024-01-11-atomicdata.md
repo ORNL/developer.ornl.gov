@@ -15,6 +15,8 @@ because it offers a builtin web interface, is linked to
 analysis routines, and already has [many databases](https://cmr.fysik.dtu.dk/)
 published in this format.
 
+![database viewer](/images/ase_db.png)
+
 There are, however, several notable python packages intended
 to wrap VASP calculations for various purposes,
 
@@ -138,7 +140,7 @@ So, there's plenty of data available to archive in the `OUTCAR`.
 
 The following code forms the basis for a script
 that ingests the OUTCAR from a directory named
-"PtIr.bulk" and adds some extra key-value pairs
+"Pt.bulk" and adds some extra key-value pairs
 to the database to help track where this
 calculation fits into the larger project.
 
@@ -217,7 +219,7 @@ it's a good idea to setup the database's metadata using,
 Use a `metadata.json` file like this one,
 
 ```
-{ "title": "Surface Adsorption Study of C on PtIr",
+{ "title": "Surface Adsorption Study of C on Pt",
   "key_descriptions": {
     "name": ["Name", "System name", ""],
     "phase": ["Phase", "surface|gas|liquid|solid", ""],
@@ -286,3 +288,4 @@ Georg Kresse has written a very nice
 is a Computational Scientist in the Advanced Computing for Chemistry and Materials group, where he works to develop mathematical and computational theory jointly with methods for multiscale modeling using HPC. He obtained his Ph.D. in Physical Chemistry from University of Cincinnati in 2009 on the topic
 of applying Bayes' theorem to the free energy problem with applications to multiscale modeling of fluids and interface chemistry.
 
+This work was sponsored by the Laboratory Directed Research and Development Program of Oak Ridge National Laboratory (ORNL), managed by UT-Battelle, LLC, for the U.S. Department of Energy. ORNL is managed by UT-Battelle, LLC, for the DOE under Contract No. DE-AC05-00OR22725.
