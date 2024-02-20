@@ -90,8 +90,11 @@ before trying to script the process.
     >>> from ase.calculators.vasp import Vasp
     >>> calc = Vasp(directory=".", restart=True)
 
-Unfortunately, someone had removed all the `vasprun.xml`
-files from my data.
+Unfortunately, this threw an error since
+my data did not consistently contain `vasprun.xml` files.
+Even when it does, however, the `calc` object created
+above cannot access all the steps of an MD trajectory
+or geometry optimization.
 
 So, I used the raw `ase.io` utilities:
 
@@ -139,8 +142,9 @@ So, there's plenty of data available to archive in the `OUTCAR`.
 ### Putting it together
 
 The following code forms the basis for a script
-that ingests the OUTCAR from a directory named
-"Pt.bulk" and adds some extra key-value pairs
+that ingests the OUTCAR from the directory 
+where the calculation was run.
+It adds some extra key-value pairs
 to the database to help track where this
 calculation fits into the larger project.
 
@@ -265,12 +269,42 @@ Then serve using:
 
     $ ase db mydata.db -w
 
+## Parallelizing
+
+Given the basic `add_to_db(db, metadata)` function above,
+it's not too difficult to create a parallel version
+to import a whole list of calculations at a time.
+The basic idea is to parse data files in parallel.
+
+Although it's possible to [reserve spots in the database](https://wiki.fysik.dtu.dk/ase/ase/db/db.html#writing-rows-in-parallel),
+adding to the database is fast, and reserving then writing creates
+contention between threads.
+Actually, reading and parsing is the bottleneck.
+So, we parallelize the parsing.
+
+The current best practice for parallelizing in python
+is using a [map with async thread pools](https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.Executor.map).
+First, instead of calling `db.write` itself, the
+`add_to_db` function should just take a directory name as input
+and return a list of `[(out, key_value_pairs)]` that it would have written.
+Now, the main loop can iterate over return values
+from the map and write all those to the database.
+
+```
+from concurrent.futures import ThreadPoolExecutor
+
+with ThreadPoolExecutor(max_workers=8) as executor:
+    for out, key_value_pairs in executor.map(parse_structures, \
+                                             list_of_directories):
+        db.write(out, key_value_pairs)
+```
+
 ## Data Validation
 
 Finally, a word about data validation.
 
 It's important to understand the accuracy of your
-VASP calculations.  Were these prelininary computations
+VASP calculations.  Were these preliminary computations
 used to map out a structural space with low energetic
 accuracy, or a high-accuracy scan of the potential energy
 surface during a rearrangement or chemical reaction?
