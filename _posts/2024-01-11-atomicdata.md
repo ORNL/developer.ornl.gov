@@ -62,8 +62,7 @@ This sets up a python virtual environment with ase
 ready to load.
 
 ASE has the ability to write VASP input files
-an run calculations if you also set up
-a few
+and run calculations if you also set up a few
 [environment variables](https://wiki.fysik.dtu.dk/ase/ase/calculators/vasp.html#environment-variables).
 
     export ASE_VASP_COMMAND='mpirun vasp_std'
